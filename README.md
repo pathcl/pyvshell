@@ -1,6 +1,11 @@
 # pyvshell
 
-First attempt to manage ESXi/vCenter through cmd python module and pyVmomi. 
+First attempt to manage ESXi/vCenter through cmd python module and pyVmomi. Tested on Python 3.4.3 and 3.5.0 
+
+## Installation:
+
+pip install -r requirements.txt
+python shell.py
 
 Features:
 
