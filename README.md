@@ -9,7 +9,7 @@ First attempt to manage ESXi/vCenter through cmd python module and pyVmomi. Test
 
 ## Features:
 
-    start command:
+# start command:
 
     >>> start someesxi.domain.tld
     Please enter your username: root
