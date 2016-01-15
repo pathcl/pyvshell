@@ -4,8 +4,8 @@ First attempt to manage ESXi/vCenter through cmd python module and pyVmomi. Test
 
 ## Installation:
 
-pip install -r requirements.txt
-python shell.py
+    $ pip install -r requirements.txt
+    $ python shell.py
 
 Features:
 
