@@ -7,9 +7,9 @@ First attempt to manage ESXi/vCenter through cmd python module and pyVmomi. Test
     $ pip install -r requirements.txt
     $ python shell.py
 
-Features:
+## Features:
 
-## start command:
+    start command:
 
     >>> start someesxi.domain.tld
     Please enter your username: root
@@ -38,7 +38,7 @@ Features:
     Host regex?: ^DC0.*
     Powered on/total (vcenter) VirtualMachines:  |################################| 48/48
 
-## stop command:
+    stop command:
 
     >>> stop someesxi.domain.tld
     Please enter your username: root
@@ -67,7 +67,7 @@ Features:
     Host regex?: DC0_C1.*
     Powered off/total (vcenter) VirtualMachines:  |################                | 24/48
 
-## ls command:
+    ls command:
 
     >>> ls someesxi.domain.tld
     Please enter your username: root
@@ -100,7 +100,7 @@ Features:
     **********************************************************************
     You have a total of 48 VM in someesxi.domain.tld
 
-## Shell command(s):
+    Shell command(s):
 
     It also takes command from your OS shell.
 
@@ -109,7 +109,7 @@ Features:
     Darwin tarro 13.4.0 Darwin Kernel Version 13.4.0: Wed Mar 18 16:20:14 PDT 2015; root:xnu-2422.115.14~1/RELEASE_X86_64 x86_64
 
 
-## Power off/on command(s):
+    Power off/on command(s):
 
     You can power on/off vm machines.
 
