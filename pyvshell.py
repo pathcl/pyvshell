@@ -1,32 +1,29 @@
+#!/usr/bin/env python
 import cmd
 import os
 
-from vmware import ls
-from vmware import stop
-from vmware import start
-from vmware import poweron
-from vmware import poweroff
+from lib import vmware
 
 
 class PyvShell(cmd.Cmd):
     prompt = '>>> '
 
     def do_ls(self, line):
-        ls(line)
+        vmware.ls(line)
 
     def do_stop(self, line):
-        stop(line)
+        vmware.stop(line)
 
     def do_start(self, line):
-        start(line)
+        vmware.start(line)
 
     def do_poweron(self, line):
         args = line.split()
-        poweron(args[0], args[1])
+        vmware.poweron(args[0], args[1])
 
     def do_poweroff(self, line):
         args = line.split()
-        poweroff(args[0], args[1])
+        vmware.poweroff(args[0], args[1])
 
     def do_shell(self, line):
         """

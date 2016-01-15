@@ -3,13 +3,13 @@ import atexit
 import re
 import ssl
 import warnings
+from . import pchelper
+from . import tasks
 
 from progress.bar import Bar
 from pyVmomi import vmodl
 from pyVmomi import vim
 from pyVim import connect
-from tools import pchelper
-from tools import tasks
 
 ssl._create_default_https_context = ssl._create_unverified_context
 warnings.filterwarnings("ignore")
