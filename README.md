@@ -108,12 +108,12 @@ Features:
 
     You can power on/off vm machines.
 
-    >>> poweron 172.16.4.130 DC0_C0_RP5_VM0
+    >>> poweron someesxi.domain.tld DC0_C0_RP5_VM0
     Please enter your username: user
     Password:
     DC0_C0_RP5_VM0 is already powered on!!
 
-    >>> poweroff 172.16.4.130 DC0_C0_RP5_VM0
+    >>> poweroff someesxi.domain.tld DC0_C0_RP5_VM0
     Please enter your username: user
     Password:
     DC0_C0_RP5_VM0 is now powered off
