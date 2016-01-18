@@ -1,15 +1,23 @@
-import getpass
-import atexit
-import re
-import ssl
-import warnings
-from . import pchelper
-from . import tasks
+try:
 
-from progress.bar import Bar
-from pyVmomi import vmodl
-from pyVmomi import vim
-from pyVim import connect
+    import getpass
+    import atexit
+    import re
+    import ssl
+    import warnings
+    from . import pchelper
+    from . import tasks
+
+    from progress.bar import Bar
+    from pyVmomi import vmodl
+    from pyVmomi import vim
+    from pyVim import connect
+
+except ImportError:
+    print("Please do pip install -r requirements.txt before running")
+
+except:
+    print("Whoops! error :(")
 
 ssl._create_default_https_context = ssl._create_unverified_context
 warnings.filterwarnings("ignore")

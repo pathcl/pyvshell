@@ -2,10 +2,16 @@
 """
 Little class around cmd module
 """
-import cmd
-import os
+try:
+    import cmd
+    import os
+    from lib import vmware
 
-from lib import vmware
+except ImportError:
+    print("import went wrong!")
+
+except:
+    print("Whoops! error :(")
 
 
 class PyvShell(cmd.Cmd):
