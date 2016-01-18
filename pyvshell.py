@@ -7,6 +7,13 @@ from lib import vmware
 
 class PyvShell(cmd.Cmd):
     prompt = '>>> '
+    intro = '''
+    Welcome to PyvShell. Please type 'help' in order to view all available.\t
+    For example:
+
+    >>> help 
+    >>> help ls
+    '''
 
     def do_ls(self, line):
         """
@@ -60,7 +67,7 @@ class PyvShell(cmd.Cmd):
         ----------------------------------------------------------------------
         Host regex?: DC0_C1.*
         Powered off/total (vcenter) VirtualMachines:  |################                | 24/48
-        
+
         """
         vmware.stop(line)
 
@@ -147,3 +154,4 @@ class PyvShell(cmd.Cmd):
 if __name__ == "__main__":
     shell = PyvShell()
     shell.cmdloop()
+
