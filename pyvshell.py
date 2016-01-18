@@ -38,8 +38,8 @@ class PyvShell(cmd.Cmd):
         print(output)
         self.last_output = output
 
-        def do_EOF(self, line):
-            return True
+    def do_EOF(self, line):
+        return True
 
     def postloop(self):
         print
