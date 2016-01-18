@@ -15,7 +15,7 @@ class PyvShell(cmd.Cmd):
 
     prompt = '>>> '
     intro = '''
-    Welcome to PyvShell. Please type 'help' in order to view all available.\t
+    Welcome to PyvShell. Please type 'help' in order to view all commands available.\t
     For example:
 
     >>> help
