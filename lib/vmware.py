@@ -159,7 +159,7 @@ def stop(host):
     DC0_C1_H7
     ----------------------------------------------------------------------
     Host regex?: DC0.*
-    Powered off/total (vcenter) VirtualMachines:  |################################| 46/46
+    Powered off/total (vcenter) VirtualMachines:  |#############| 46/46
 
     """
 
