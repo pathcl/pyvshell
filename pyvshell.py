@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+Little class around cmd module
+"""
 import cmd
 import os
 
@@ -6,12 +9,16 @@ from lib import vmware
 
 
 class PyvShell(cmd.Cmd):
+    """
+    We'll create an object named PyvShell
+    """
+
     prompt = '>>> '
     intro = '''
     Welcome to PyvShell. Please type 'help' in order to view all available.\t
     For example:
 
-    >>> help 
+    >>> help
     >>> help ls
     '''
 
@@ -66,7 +73,7 @@ class PyvShell(cmd.Cmd):
         DC0_C1_H7
         ----------------------------------------------------------------------
         Host regex?: DC0_C1.*
-        Powered off/total (vcenter) VirtualMachines:  |################                | 24/48
+        Powered off/total (vcenter) VirtualMachines:  |################| 48/48
 
         """
         vmware.stop(line)
@@ -98,7 +105,7 @@ class PyvShell(cmd.Cmd):
         DC0_C1_H7
         ----------------------------------------------------------------------
         Host regex?: ^DC0.*
-        Powered on/total (vcenter) VirtualMachines:  |################################| 48/48
+        Powered on/total (vcenter) VirtualMachines:  |################| 48/48
 
         """
         vmware.start(line)
@@ -127,11 +134,12 @@ class PyvShell(cmd.Cmd):
 
     def do_shell(self, line):
         """
-        Yes you can! shell is available thorough !
+        Yes you can! shell is available through !
 
         >>> !uname -a
         running shell command: uname -a
-        Linux lsanmartin 3.13.0-49-generic #83-Ubuntu SMP Fri Apr 10 20:11:33 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+        Linux lsanmartin 3.13.0-49-generic #83-Ubuntu SMP Fri Apr 10 20:11:33
+        UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
 
         """
         output = os.popen(line).read()
@@ -139,14 +147,20 @@ class PyvShell(cmd.Cmd):
         self.last_output = output
 
     def do_EOF(self, line):
+        """
+        It allows Ctrl+d
+        """
         return True
 
     def postloop(self):
-        print
+        """
+        Greets when you Ctrl+d
+        """
+        print("\nBye!")
 
     def emptyline(self):
         """
-        Overrides definition for emptyline
+        Warns you to not type empty lines
 
         """
         print("Do not type empty lines! type 'help' to get commands")
@@ -154,4 +168,3 @@ class PyvShell(cmd.Cmd):
 if __name__ == "__main__":
     shell = PyvShell()
     shell.cmdloop()
-
