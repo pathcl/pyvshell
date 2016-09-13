@@ -19,20 +19,17 @@ except ImportError:
 except:
     print("Whoops! error :(")
 
-ssl._create_default_https_context = ssl._create_unverified_context
-warnings.filterwarnings("ignore")
-
-
 def vmdata(host):
     """ Basic connector to ESXi. It uses pchelper in order to get vm
     properties.
     """
-
+    context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
+    context.verify_mode = ssl.CERT_NONE
     user = input("Please enter your username: ")
     password = getpass.getpass("Password: ")
     SI = connect.SmartConnect(host=host, user=user,
                               pwd=password,
-                              port=443)
+                              port=443, sslContext=context)
 
     atexit.register(connect.Disconnect, SI)
     view = pchelper.get_container_view(SI, obj_type=[vim.VirtualMachine])
